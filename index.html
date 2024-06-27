@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping list example</title>
+    <style>
+        html{
+            zoom: 250%;
+        }
+        a{
+            color:rgba(255, 255, 255, 0.395); 
+            text-decoration: none;
+            font-family: "Roboto";
+        }
+        body{
+            background-image: url("./img5.jpg");
+            background-size: cover;
+            margin:0px;
+            padding:0px;
+            
+        }    
+        li {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        li button {
+            font-size: 12px;
+            margin-left: 20px;
+            color: #666;
+        }
+        .top,.head{
+            display:flex;
+        }
+        .top {
+            padding:20px 0px 20px;
+            width: 100%;
+            justify-content: center;
+            flex-direction: column;
+            margin:0px;
+            height: 100px;
+            color:white;
+            backdrop-filter: blur(30px);
+            border-radius: 10px;
+            -webkit-backdrop-filter: blur(30px);
+
+        }
+        .head {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        button {
+            background-color: rgb(4, 4, 129);
+            color:rgb(171, 171, 171);
+            height: 30px;
+            height: 30px;
+            padding:4px;
+            border-radius: 6px;
+            border:0px;
+        }
+        .cen{
+            margin:40px 0px 0px;
+            padding:20px;
+        }
+        ul{
+            display: flex;
+            flex-direction: column;
+            border: 4px dashed  rgb(5, 40, 92);
+            padding:10px;
+        }
+        li{
+            margin:10px;
+        }
+    </style>
+  </head>
+  
+  <body style = "background-color: rgb(13, 102, 105);">
+    <div class="head">
+    <div class = "top">
+        
+        <h1 style="display:flex;align-self: center;padding:0px;margin:0px;">Tasks </h1> <p style="display:flex;align-self: self-end;font-weight:20;font-style:italic;font-family:'Segoe UI';padding:0px 30% 0px;"> By Harshit K</p>
+        <div style="display: flex;justify-content: space-around;">
+        <a href="">My github Page</a >
+        <a onclick="contact()">My Contact</a >
+        <a onclick="contact()">My Contact</a >
+        </div>
+    </div>
+    <div class = "cen" >
+      <label for="item" style="color:white;font-weight:20;font-family:  'Segoe UI';">Enter Your Target :</label>
+      <input type="text" name="item" id="item" style="color:white;margin:3px ;height: 30px;border:0px ;background-color:rgb(3, 42, 96);border-radius: 10px;color:black">
+      <button id = "add" onclick = "append()">Add target</button>
+    </div>
+
+    <ul>
+
+    </ul>
+    </div>
+    <script>
+        let hd = document.querySelector("ul");
+        let txt = document.querySelector("#text");
+        let add = document.querySelector("#add");
+        let idr = 0;
+        let rand = Math.random()*100 % 2;
+        rand = 2
+        let img = document.querySelector("body");
+
+        img.style["background-image"] = url(`./img{$rand}`);
+
+        function append(){
+            let l = document.createElement("li");
+            let b = document.createElement("button");
+            l.textContent = document.getElementById("item").value;
+            l.id = `${idr}`
+            b.id = `${idr}`;
+            b.addEventListener("click",() => hd.removeChild(l));
+            b.textContent = "Delete";
+            hd.appendChild(l);
+            l.appendChild(b);
+            idr+=1;
+        }
+        function contact(){
+            alert("My email: kandpalhar@gmail.com");
+        }
+    </script>
+  </body>
+</html>
