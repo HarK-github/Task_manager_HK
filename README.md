@@ -1,5 +1,6 @@
 # Task_manager_HK
-
+<p>
+This is a project made by me (HK). Using this website you can create and delete daily tasks :) </p>
 Features to be included
 <ul>
     <li>Create pdf of taska</li>
