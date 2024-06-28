@@ -72,12 +72,16 @@
             padding:10px;
         }
         li{
+            color:rgb(198, 186, 186);
             margin:10px;
         }
 
         @media (max-width:600px){ /* Means that below 600px this should be scaled according to below piece of code*/
              a ,button ,label{
                 font-size: 10px;
+             }
+             li{
+                color:white;
              }
         }
     </style>
@@ -89,7 +93,7 @@
         
         <h1 style="display:flex;align-self: center;padding:0px;margin:0px;">Tasks </h1> <p style="display:flex;align-self: self-end;font-weight:20;font-style:italic;font-family:'Segoe UI';padding:0px 30% 0px;"> By Harshit K</p>
         <div style="display: flex;justify-content: space-around;">
-        <a href="">My github Page</a >
+        <a href="https://github.com/HarK-github/Task_manager_HK">My github Page</a >
         <a onclick="contact()">My Contact</a >
         <a onclick="contact()">My Contact</a >
         </div>
@@ -121,6 +125,7 @@
             l.textContent = document.getElementById("item").value;
             l.id = `${idr}`
             b.id = `${idr}`;
+            l.style["color"] = "white";
             b.addEventListener("click",() => hd.removeChild(l));
             b.textContent = "Delete";
             hd.appendChild(l);
