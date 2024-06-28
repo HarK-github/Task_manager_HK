@@ -2,11 +2,11 @@
 <html lang="en-US">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- IMPORTANT FOR CROSS COMPATIBILITY -->
     <title>Task Manager</title>
     <style>
         html{
-            zoom: 200%;
+            zoom: 150%;
         }
         a{
             color:rgba(255, 255, 255, 0.395); 
@@ -73,6 +73,12 @@
         }
         li{
             margin:10px;
+        }
+
+        @media (max-width:600px){ /* Means that below 600px this should be scaled according to below piece of code*/
+             a ,button ,label{
+                font-size: 10px;
+             }
         }
     </style>
   </head>
